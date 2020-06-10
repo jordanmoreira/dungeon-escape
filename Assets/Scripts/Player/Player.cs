@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     PlayerAnimation _playerAnimation;
     SpriteRenderer _playerSprite;
+    SpriteRenderer _swordArcSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -21,12 +22,14 @@ public class Player : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _playerAnimation = GetComponent<PlayerAnimation>();
         _playerSprite = GetComponentInChildren<SpriteRenderer>();
+        _swordArcSprite = transform.GetChild(1).GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Movement();
+        Attack();
     }
 
     void Movement()
@@ -36,11 +39,11 @@ public class Player : MonoBehaviour
 
         if (move > 0)
         {
-            Flip(true);
+            FlipPlayer(true);
         }
         else if (move < 0)
         {
-            Flip(false);
+            FlipPlayer(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
@@ -71,15 +74,37 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    void Flip(bool isFacingRight)
+    void FlipPlayer(bool isFacingRight)
     {
         if (isFacingRight == true)
         {
             _playerSprite.flipX = false;
+            _swordArcSprite.flipX = false;
+            _swordArcSprite.flipY = false;
+
+            Vector3 newPos = _swordArcSprite.transform.localPosition;
+            newPos.x = 1.01f;
+            _swordArcSprite.transform.localPosition = newPos;
         }
         else if (isFacingRight == false)
         {
             _playerSprite.flipX = true;
+            _swordArcSprite.flipX = true;
+            _swordArcSprite.flipY = true;
+
+            Vector3 newPos = _swordArcSprite.transform.localPosition;
+            newPos.x = -1.01f;
+            _swordArcSprite.transform.localPosition = newPos;
+        }
+    }
+
+    void Attack()
+    {
+        _grounded = IsGrounded();
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _grounded)
+        {
+            _rb.velocity = new Vector2(0, _rb.velocity.y);
+            _playerAnimation.Attack();
         }
     }
 
