@@ -63,6 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\MossGiant.cs" />
+    <Compile Include="Assets\Scripts\Enemy\MossGiantAnimation.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Spider.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
     <Reference Include="UnityEngine">
@@ -590,6 +594,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Animation.Runtime">
       <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
@@ -653,6 +660,9 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
@@ -667,12 +677,6 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>F:/Unity/Projects/Dungeon Escape/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>
